@@ -1,0 +1,26 @@
+<p><strong>{{error}}</strong></p>
+<p>Bienvenid@ {{user.first_name}}</p>
+<p>Tu rol es: {{user.role}}</p>
+<a href="/api/sessions/logout">Cerrar sesion</a>
+
+{{#if payload}}
+<h1>Listado de productos</h1>
+<ul>
+    {{#each payload}}
+        <li>{{this.title}} Precio: {{this.price}} </li>
+        <button>Agregar al carrito</button>
+    {{/each}}
+</ul>
+
+{{#if hasPrevPage}}
+<a href={{prevLink}}>Anterior</a>
+{{/if}}
+{{page}}
+{{#if hasNextPage}}
+<a href={{nextLink}}>Siguiente</a>
+{{/if}}
+{{page}}
+{{else}}
+<h2>No hay productos</h2>
+
+{{/if}}

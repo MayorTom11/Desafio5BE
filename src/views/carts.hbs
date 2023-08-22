@@ -1,0 +1,10 @@
+<h1>Pagina de Carritos</h1>
+
+{{#if _id}}
+<h1>Listado de carritos</h1>
+<ul>
+    {{#each _id}}
+        <li>{{this.products}}</li>
+    {{/each}}
+</ul>
+{{/if}}
